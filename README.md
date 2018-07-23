@@ -22,7 +22,7 @@ Then choose a CATH superfamily (3.20.20.190 or 2.29.30.29)
 6. Delete unused files and Quit
 
 ### Add a new case
-1. Choose a **CATH superfamily** and create a directory _/superfamilies/NEW-FAMILY_
+1. Choose a **CATH superfamily** (http://www.cathdb.info/) and create a directory _/superfamilies/NEW-FAMILY_
 2. Provide a **structural alignment** file (FASTA format) _/NEW-FAMILY/fasta/cath/alignment.fasta_
 3. Provide the **pdb files** corresponding _/NEW-FAMILY/pdb_
 4. Provide a **file containing sequences to add** (FASTA format) : _/NEW-FAMILY/fasta/new/seq_to_align.fasta_
