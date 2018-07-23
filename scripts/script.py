@@ -69,11 +69,8 @@ PDB = PATH+'pdb/'
 DSSP = PATH+'dssp/'
 TABLES = PATH+'tables/'
 
-# LISTS
- # amino acids
+# LIST OF AA
 AA = ['R','K','D','E','Q','N','H','S','T','Y','C','W','A','I','L','M','F','V','P','G']
- # secondary structures
-SS = ['H','E','T','S','B', 'C']
 
 # FUNCTIONS
 
@@ -187,6 +184,7 @@ def buildFoldDict():
 
 def buildSSDict():
     '''
+    Creates a dictionary of all ss of all proteins
     '''
     SSDict = {}
     alnPattn = re.compile('(E(|-*)){1,}E|(H(|-*)){1,}H|(T(|-*)){1,}T|T')
@@ -286,6 +284,7 @@ def colorSS(choice):
 def pdbStart():
     '''
     Creates a file containing the start from each pdb files
+    Necessary for PyMOL
     '''
     filename = PDB+'starts.dat'
     with open(filename,'w') as filout:
@@ -304,7 +303,8 @@ def pdbStart():
 
 def retrieveFolds():
     '''
-    Creates a file
+    Creates a file containing the start and the stop of folds
+    Necessary for PyMOL
     '''
     folds = {}
     for pdb in SSDict.keys():
@@ -348,6 +348,7 @@ def createCSV(tableLoop,filename):
 
 def studyFold(foldname):
     '''
+    For a chosen fold, it creates a csv file containing the number of each aa for each protein
     '''
     loopSeq = {}
     for pdb,domains in SSDict.items():
@@ -360,6 +361,7 @@ def studyFold(foldname):
 
 def studyLoop(ele1,ele2):
     '''
+    For a chosen loop (between two folds), it creates a csv file containing the number of each aa for each protein
     '''
     loop = {}
     for pdb,domains in SSDict.items():
@@ -385,6 +387,7 @@ def studyLoop(ele1,ele2):
 
 def addSeqAndAlign():
     '''
+    Adds sequences to the structural alignment 
     '''
     call(['softwares/hmmbuild --amino '+CATH+'hmmfile.out '+CATH+'alignment.fasta'+' > '+CATH+'hmmbuild.log'],shell=True)
     print(R+' hmm profil :'+G+' "'+CATH+'hmmfile.out" and '+CATH+'"hmmbuild.log'+'" created.\n'+NC)
