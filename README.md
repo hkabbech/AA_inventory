@@ -31,4 +31,4 @@ Then choose a CATH superfamily (3.20.20.190 or 2.29.30.29)
 ### Authors
 
 * **Hélène Kabbech** - Bioinformatics Master student (University of Paris Diderot)
-* Internship supervised by Prof. **Nathalie Reuter** (CBU Bergen)
+* Internship supervised by **Prof. Nathalie Reuter** (CBU Bergen)
